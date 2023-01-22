@@ -44,13 +44,13 @@ for tr in tbody_tr:
     course = type("Course", (), dict())
     course.time = tr.find("td", class_ = "c0").text.replace("\n","").strip()
     course.buy = tr.find("td", class_ = "c1").text.replace("\n","").strip()
-    course.buy1 = tr.find('td', class_ = 'c2').text.replace('\n',"").strip()
-    course.buy2 = tr.find('td', class_='c3').text.replace('\n','').strip()
-    course.buy3 = tr.find('td', class_='c4').text.replace('\n','').strip()
+    course.sell = tr.find('td', class_ = 'c2').text.replace('\n',"").strip()
+    course.name = tr.find('td', class_='c3').text.replace('\n','').strip()
+    course.numbers = tr.find('td', class_='c4').text.replace('\n','').strip()
     course.buys1 = re.sub(r"^\d+\.\d{2}", "", course.buy).strip()
     course.buys2 = re.sub(r"(\d+|\d+\.\d{2})$", "", course.buy).strip()
-    course.buys3 = re.sub(r"^\d+\.\d{2}", "", course.buy1).strip()
-    course.buys4 = re.sub(r"(\d+|\d+\.\d{2})$", "", course.buy1).strip()
+    course.buys3 = re.sub(r"^\d+\.\d{2}", "", course.sell).strip()
+    course.buys4 = re.sub(r"(\d+|\d+\.\d{2})$", "", course.sell).strip()
     date_course = tr.find_all('td')
 
     date =[]
@@ -68,7 +68,7 @@ for tr in tbody_tr:
                 course.time,
                 course.buys2,
                 course.buys4,
-                course.buy2,
-                course.buy3
+                course.name,
+                course.numbers
             )
         )
