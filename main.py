@@ -49,8 +49,8 @@ for tr in tbody_tr:
     course.numbers = tr.find('td', class_='c4').text.replace('\n','').strip()
     course.buys1 = re.sub(r"^\d+\.\d{2}", "", course.buy).strip()
     course.buys2 = re.sub(r"(\d+|\d+\.\d{2})$", "", course.buy).strip()
-    course.buys3 = re.sub(r"^\d+\.\d{2}", "", course.sell).strip()
-    course.buys4 = re.sub(r"(\d+|\d+\.\d{2})$", "", course.sell).strip()
+    course.sell1 = re.sub(r"^\d+\.\d{2}", "", course.sell).strip()
+    course.sell2 = re.sub(r"(\d+|\d+\.\d{2})$", "", course.sell).strip()
     date_course = tr.find_all('td')
 
     date =[]
@@ -67,7 +67,7 @@ for tr in tbody_tr:
                 course_,
                 course.time,
                 course.buys2,
-                course.buys4,
+                course.sell2,
                 course.name,
                 course.numbers
             )
