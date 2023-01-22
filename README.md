@@ -1,0 +1,1 @@
+Парсинг таблицы с сайта https://tables.finance.ua/ua/currency/cash/-/ua/usd/1#3:0 + запись в excel файл таблицой
